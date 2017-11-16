@@ -1,0 +1,67 @@
+<link rel="import" href="../polymer/polymer-element.html">
+<link rel="import" href="../iron-ajax/iron-ajax.html">
+
+<!-- Import the styles from the style module my-styles -->
+<link rel="import" href="my-styles.html">
+
+
+<dom-module id="gathr-photos">
+  <template>
+  <style include="my-styles"></style>
+  <style is="custom-style">
+
+    </style>
+        <div class="container-fluid" style="overflow:hidden;">
+          <table style="overflow:hidden;">
+            <tr style="overflow:hidden;">
+        <template is="dom-repeat" items="[[photos]]">
+            <td style="overflow:hidden;">
+              <img src="{{item.url}}" class="img img-responsive"/>
+            </td>
+           <p>{{wd}}</p>
+        </template>
+</tr>
+</table>
+    </div>
+
+
+    <iron-ajax
+    id="requestPhotos"
+    url="http://api.gathr.me/v4/photo/photos/token/{{pm}}"
+    params='{"X-API-KEY":"3725c5c088c7b235550f85223687031a2356aae6"}'
+    handle-as="json"
+    on-response="handleResponse">
+    </iron-ajax>
+  </template>
+
+  <script>
+    /**
+     * `Gathr-Photos`
+     * Gathr Web Component for displaying photos from Gathr.
+     *
+     * @customElement
+     * @polymer
+     * @demo demo/index.html
+     */
+     Polymer({
+      is: 'gathr-photos',
+      properties: {
+          pm: String,
+          occassion: {
+              type: Array
+          }
+      },
+      ready: function () {
+          this.$.requestPhotos.generateRequest();
+      },
+      handleResponse: function (data) {
+          this.occassion = data.detail.response;
+          this.photos = []
+          this.occassion.photos.forEach(function(element) {
+            this.photos.push(element)
+          }, this);
+          
+      }
+  });
+  </script>
+</dom-module>
