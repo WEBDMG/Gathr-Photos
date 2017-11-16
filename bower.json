@@ -4,9 +4,7 @@
   "main": "Gathr-Photos.html",
   "dependencies": {
     "polymer": "Polymer/polymer#^2.0.0",
-    "iron-ajax": "latest",
-    "bootstrap": "v4.0.0-beta",
-    "paper-lightbox":"latest"
+    "iron-ajax": "latest"
   },
   "devDependencies": {
     "iron-demo-helpers": "PolymerElements/iron-demo-helpers#^2.0.0",

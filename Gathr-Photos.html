@@ -18,7 +18,7 @@
             <td style="overflow:hidden;">
               <img src="{{item.url}}" class="img img-responsive"/>
             </td>
-            
+           <p>{{wd}}</p>
         </template>
 </tr>
 </table>
@@ -27,8 +27,8 @@
 
     <iron-ajax
     id="requestPhotos"
-    url="http://api.gathr.me/v4/photo/photos/token/{{token}}"
-    params='{"X-API-KEY":"d033e22ae348aeb5660fc2140aec35850c4da997"}'
+    url="http://api.gathr.me/v4/photo/photos/token/{{pm}}"
+    params='{"X-API-KEY":"3725c5c088c7b235550f85223687031a2356aae6"}'
     handle-as="json"
     on-response="handleResponse">
     </iron-ajax>
@@ -46,7 +46,7 @@
      Polymer({
       is: 'gathr-photos',
       properties: {
-          token: String,
+          pm: String,
           occassion: {
               type: Array
           }
