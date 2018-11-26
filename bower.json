@@ -1,11 +1,11 @@
 {
-  "name": "Gathr-Photos",
+  "name": "gathr-photos",
   "description": "Gathr Web Component for displaying photos from Gathr.",
   "main": "Gathr-Photos.html",
   "dependencies": {
     "polymer": "Polymer/polymer#^2.0.0",
     "Gathr-Photos": "WEBDMG/Gathr-Photos",
-    "iron-ajax": "latest"
+    "iron-ajax": "^2.0.0"
   },
   "devDependencies": {
     "iron-demo-helpers": "PolymerElements/iron-demo-helpers#^2.0.0",
@@ -13,7 +13,6 @@
     "webcomponentsjs": "webcomponents/webcomponentsjs#^1.0.0"
   },
   "resolutions": {
-    "polymer": "^2.0.0",
-    "Gathr-Photos": "WEBDMG/Gathr-Photos"
+    "polymer": "^2.0.0"
   }
 }

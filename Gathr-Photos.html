@@ -1,5 +1,5 @@
-<link rel="import" href="../polymer/polymer-element.html">
-<link rel="import" href="../iron-ajax/iron-ajax.html">
+<link rel="import" href="bower_components/polymer/polymer-element.html">
+<link rel="import" href="bower_components/iron-ajax/iron-ajax.html">
 
 <!-- Import the styles from the style module my-styles -->
 <link rel="import" href="my-styles.html">
@@ -27,7 +27,7 @@
     <iron-ajax
     id="requestPhotos"
     url="http://api.gathr.me/v4/photo/photos/token/{{pm}}"
-    params='{"X-API-KEY":"3725c5c088c7b235550f85223687031a2356aae6"}'
+    params='{"X-API-KEY":{{gt}}}'
     handle-as="json"
     on-response="handleResponse">
     </iron-ajax>
@@ -46,6 +46,7 @@
       is: 'gathr-photos',
       properties: {
           pm: String,
+          gt:String,
           occassion: {
               type: Array
           }
