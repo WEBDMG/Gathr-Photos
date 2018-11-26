@@ -26,8 +26,7 @@
 
     <iron-ajax
     id="requestPhotos"
-    url="https://api.gathr.me/v4/photo/photos/token/{{pm}}"
-    params='{"X-API-KEY":"{{gt}}"}'
+    url="https://api.gathr.me/v4/photo/photos/token/{{pm}}/?X-API-KEY={{gt}}"
     handle-as="json"
     on-response="handleResponse">
     </iron-ajax>
